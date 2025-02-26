@@ -19,6 +19,9 @@ const lang = getLangFromUrl(Astro.url);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={`${Astro.site}/openGraph.png`} />
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<title>{title}</title>
 	</head>
