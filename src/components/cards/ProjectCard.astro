@@ -1,0 +1,76 @@
+---
+import type {
+    Project,
+    TechBadgeInterface,
+} from "@/types/experience/experienceTypes";
+import TechBadge from "@/components/TechBadge.astro";
+import ProjectLink from "@/components/ProjectLink.astro";
+import { getI18N } from "@/i18n";
+
+interface Props {
+    project: Project;
+    badges: TechBadgeInterface[];
+    link?: string;
+    altImage?: string;
+    githubLink?: string;
+}
+
+const { project, badges, link, altImage, githubLink } = Astro.props;
+
+const { currentLocale } = Astro;
+const { PROJECTS_SECTION } = getI18N({ currentLocale });
+---
+
+<article
+    class="flex w-full rounded-t-lg border justify-center items-center mb-24 min-h-[50vh]"
+>
+    <div class="w-3/4 p-5">
+        <div
+            class="border-b border-stone-700 p-2 justify-start items-center flex gap-5"
+        >
+            <h4 class="text-2xl font-bold text-accent">
+                {project.projectTitle}
+            </h4>
+            <div class="w-1 rounded-full bg-white h-6"></div>
+            <div class="flex">
+                {
+                    link && (
+                        <ProjectLink
+                            link={link}
+                            tooltipMessage={PROJECTS_SECTION.websiteTooltip}
+                            type="external"
+                            altImage={altImage}
+                        />
+                    )
+                }
+                {
+                    githubLink && (
+                        <ProjectLink
+                            link={githubLink}
+                            tooltipMessage={PROJECTS_SECTION.githubTooltip}
+                            type="github"
+                            altImage={altImage}
+                        />
+                    )
+                }
+            </div>
+        </div>
+        {
+            project.descriptions.map((description) => {
+                return <p class="p-4 text-white text-xl">{description}</p>;
+            })
+        }
+        <div class="flex gap-8 ml-10 mt-12">
+            {
+                badges.map((badge) => (
+                    <TechBadge
+                        image={badge.image}
+                        label={badge.label}
+                        color={badge.color}
+                    />
+                ))
+            }
+        </div>
+    </div>
+    <img src="https://picsum.photos/500/300" class="p-6 w-2/5 h-80" />
+</article>

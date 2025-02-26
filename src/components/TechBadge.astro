@@ -1,0 +1,16 @@
+---
+interface Props {
+    image: string;
+    label: string;
+    color: string;
+}
+const { image, label, color } = Astro.props;
+---
+
+<strong
+    class=`flex border rounded-full px-4 gap-1 justify-center items-center min-h-7`
+    style={`border-color: ${color};`}
+>
+    <img src={image} alt={label} class="size-4" />
+    <span class="ml-2 whitespace-nowrap text-white text-xs">{label}</span>
+</strong>

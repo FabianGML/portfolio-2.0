@@ -1,0 +1,51 @@
+{
+    "TITLE": "Fabián Gutiérrez's Portafolio - Web Developer and Web Programador with more than 2 years of experience",
+    "DESCRIPTION": "This is the English description",
+    "HERO": {
+        "DESCRIPTION_FIRST": "+4 years of experience as a ",
+        "DESCRIPTION_STRONG": "software developer",
+        "DESCRIPTION_SECOND": "with solid knowledge in JavaScript"
+    },
+    "EXP": {
+        "title": "Relevant experience",
+        "EXPERIENCE": [
+            {
+                "title": "Fullstack Web Developer",
+                "company": "N1 Contable",
+                "location": "Tijuana, Baja California",
+                "date": "February 2024 - Present",
+                "descriptions": [
+                    "Led the migration and implementation of a new optimized system, achieving an 85% reduction in processing times for key tasks. A complete restructuring was carried out, eliminating inefficiencies and improving data management, resulting in a more agile and accurate operation. This transformation not only optimized performance but also provided a better user experience, reducing waiting times and increasing workflow efficiency in daily activities.",
+                    "As part of the implementation, the interface was redesigned to make it more intuitive and accessible, facilitating adoption and reducing the learning curve. Thanks to these improvements, team productivity increased significantly, enabling tasks to be completed in less time and with greater accuracy. Additionally, the new system structure ensures greater stability and scalability, guaranteeing that it can grow and adapt to future needs without compromising performance."
+                ]
+            },
+            {
+                "title": "Inventory Manager",
+                "company": "Freelance",
+                "location": "Durango, Mexico",
+                "date": "December 2022 - July 2023",
+                "descriptions": [
+                    "Was responsible for the design and development of the application, achieving a considerable improvement in productivity and a reduction in product loss. The implementation of this tool optimized inventory processes by automating manual tasks such as recording product entries and exits, generating reports, and managing alerts for low-stock products. As a result, productivity improved by 85%, significantly reducing the time spent on inventory management and allowing staff to focus on other key business areas.",
+                    "Additionally, the application contributed to a 60% reduction in product loss thanks to the implementation of a real-time tracking system and proactive alerts that helped identify and resolve issues related to expiration, misplacement, or theft. The solution was developed with modern and scalable technologies, ensuring adaptability to future business needs. This project not only improved operational efficiency but also strengthened business owners' confidence in using technological tools for business management."
+                ]
+            }
+        ]
+    },
+    "PROJECTS_SECTION": {
+        "title": "Projects",
+        "websiteTooltip": "Visit webSite!",
+        "githubTooltip": "Check out the code!",
+        "projects": [
+            {
+                "projectTitle": "Sistema de Gestión Contable",
+                "descriptions": []
+            }
+        ]
+    },
+    "ABOUT_ME": {
+        "bento1Title": "About Me",
+        "bento1Description": "Over 4 years of experience as a web developer, creating solutions through software 🤓. I thrive in collaborative environments where teamwork, leadership, and communication are key to achieving great results.",
+        "bento1Description2": "I value feedback, both giving and receiving it, and I enjoy sharing knowledge while learning from those around me. I take responsibility for making decisions that drive projects forward, always striving for a balance between efficiency, quality, and team growth.",
+        "bento1Accent": "Experience"
+    }
+}

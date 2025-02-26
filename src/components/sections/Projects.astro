@@ -1,0 +1,29 @@
+---
+import SectionContainer from "@/components/SectionContainer.astro";
+import { getI18N } from "@/i18n";
+import ProjectCard from "@/components/cards/ProjectCard.astro";
+import { linksAndBadges } from "@/helpers/techBadges";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { title, projects } = i18n.PROJECTS_SECTION;
+
+// "Uno de los principales retos fue implementar la navegación, ya que toda la aplicación utilizaba una única URL con diferentes menús mostrados mediante pestañas, lo que requería una reactividad precisa al mismo tiempo que se consideraba la escalabilidad, mantenibilidad y legibilidad del código. Además, debido a la lógica de negocio, fue necesario implementar consultas complejas con múltiples joins, utilizando Sequelize como ORM para conectarse a una base de datos MySQL. Fui clave en la estandarización del proceso de desarrollo y la organización del código, utilizando Git y GitHub como herramientas de colaboración.",
+// "Considero que este proyecto fue una gran experiencia, ya que me dio la oportunidad de liderar un proyecto y un equipo a nivel técnico, lo que me permitió detectar fortalezas y áreas de oportunidad como profesional."
+---
+
+<SectionContainer title={title}>
+    {
+        projects.map((project, index) => {
+            return (
+                <ProjectCard
+                    project={project}
+                    badges={linksAndBadges[index].badges}
+                    link={linksAndBadges[index].link ?? ""}
+                    githubLink={linksAndBadges[index].github ?? ""}
+                    altImage={linksAndBadges[index].altImage}
+                />
+            );
+        })
+    }
+</SectionContainer>

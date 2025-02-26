@@ -1,0 +1,46 @@
+---
+interface Props {
+    title: string;
+    company: string;
+    location: string;
+    date: string;
+    descriptions: string[];
+}
+const { title, company, location, date, descriptions } = Astro.props;
+---
+
+<div class="size-3 bg-white rounded-full absolute -left-12 top-3"></div>
+<article class="grid grid-cols-2 w-full gap-y-10 relative">
+    <div>
+        <h3 class="text-lg font-bold text-accent">{title}</h3>
+        <p class="text-sm text-gray-400">{company}</p>
+    </div>
+    <div class="justify-self-end">
+        <p class="text-lg">{location}</p>
+        <p class="text-sm text-gray-400">{date}</p>
+    </div>
+    {
+        descriptions.map((description) => {
+            return <p class="col-span-2 max-w-[45rem]">{description}</p>;
+        })
+    }
+</article>
+
+<style>
+    article {
+        animation: show 0.4s ease-out both;
+        animation-range: entry 50% cover 50%;
+        animation-timeline: view();
+    }
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+            transform: translateY(10rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

@@ -1,0 +1,41 @@
+---
+import ExperienceCard from "@/components/cards/ExperienceCard.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const { EXP } = i18n;
+
+const experiencieLenguage = EXP.EXPERIENCE;
+---
+
+<SectionContainer title={EXP.title}>
+    <div class="flex w-3/4 m-auto gap-10 relative">
+        <div class="w-1 rounded-full bg-stone-900 flex justify-center relative">
+        </div>
+        <!-- <div class="w-1 rounded-full absolute bg-accent" id="timeline"></div> -->
+        <div class="flex flex-col gap-24 w-full">
+            {
+                experiencieLenguage.map((exp) => (
+                    <div class="relative">
+                        <ExperienceCard
+                            title={exp.title}
+                            company={exp.company}
+                            location={exp.location}
+                            date={exp.date}
+                            descriptions={exp.descriptions}
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</SectionContainer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const timeline = document.getElementById("timeline");
+        if (!timeline) return;
+    });
+</script>

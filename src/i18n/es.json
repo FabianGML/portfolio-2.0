@@ -1,0 +1,68 @@
+{
+    "TITLE": "Fabián Gutiérrez - Desarrollador y Programaodor web con mas de 2 años de experiencia",
+    "DESCRIPTION": "Desarrollador Web con mas de 2 años de experiencia creando soluciones a traves del software 🤓.",
+    "HERO": {
+        "DESCRIPTION_FIRST": "+4 años de experiencia como ",
+        "DESCRIPTION_STRONG": "desarrollador de software ",
+        "DESCRIPTION_SECOND": "con conocimientos en JavaScript,"
+    },
+    "EXP": {
+        "title": "Experiencia relevante",
+        "EXPERIENCE": [
+            {
+                "title": "Desarrollador Web Fullstack ",
+                "company": "N1 Contable",
+                "location": "Tijuana, Baja California",
+                "date": "Febrero 2024 - Actualmente",
+                "descriptions": [
+                    "Lideré la migración e implementación de un nuevo sistema optimizado, logrando una reducción del 85% en los tiempos de procesamiento de tareas clave. Se realizó una reestructuración completa, eliminando ineficiencias y mejorando la gestión de datos, lo que resultó en una operación más ágil y precisa. Esta transformación no solo optimizó el rendimiento, sino que también permitió una mejor experiencia para los usuarios, reduciendo tiempos de espera y aumentando la fluidez en sus actividades diarias.",
+                    "Como parte de la implementación, se rediseñó la interfaz para hacerla más intuitiva y accesible, facilitando su adopción y reduciendo la curva de aprendizaje. Gracias a estas mejoras, la productividad del equipo se incrementó significativamente, permitiendo que las tareas se completen en menos tiempo y con mayor precisión. Además, la nueva estructura del sistema garantiza una mayor estabilidad y escalabilidad, asegurando que pueda crecer y adaptarse a futuras necesidades sin afectar su rendimiento."
+                ]
+            },
+            {
+                "title": "Gestor de inventarios",
+                "company": "Freelance",
+                "location": "Durango, México",
+                "date": "Diciembre 2022 - Julio 2023",
+                "descriptions": [
+                    "Fui responsable del diseño y desarrollo de la aplicación, logrando una considerable mejora en la productividad y una reducción en la pérdida de producto. La implementación de esta herramienta permitió optimizar los procesos de inventario, automatizando tareas manuales como el registro de entradas y salidas de productos, la generación de reportes y la gestión de alertas para productos próximos a agotarse. Como resultado, se mejoró la productividad en un 85%, reduciendo significativamente el tiempo dedicado a la administración del inventario y permitiendo al personal enfocarse en otras áreas clave del negocio.",
+                    "Además, la aplicación contribuyó a una reducción del 60% en la pérdida de producto, gracias a la implementación de un sistema de seguimiento en tiempo real y alertas proactivas que ayudaron a identificar y resolver problemas de caducidad, extravíos o robos. La solución fue desarrollada con tecnologías modernas y escalables, asegurando su adaptabilidad a futuras necesidades del negocio. Este proyecto no solo mejoró la eficiencia operativa, sino que también fortaleció la confianza de los dueños del comercio en el uso de herramientas tecnológicas para la gestión del negocio."
+                ]
+            }
+        ]
+    },
+    "PROJECTS_SECTION": {
+        "title": "Proyectos",
+        "websiteTooltip": "¡Visita sitio web!",
+        "githubTooltip": "¡Visita el repositorio!",
+        "projects": [
+            {
+                "projectTitle": "Sistema de Gestión Contable",
+                "descriptions": [
+                    "Fui parte del desarrollo de una aplicación web para una empresa que ofrece servicios de estrategia fiscal, gestión de nóminas y contabilidad general.",
+                    "La aplicación permite registrar y modificar la información de los clientes de manera eficiente, además de generar facturas automáticamente y enviarlas por correo electrónico.",
+                    "Uno de los principales retos fue implementar la navegación, ya que toda la aplicación utilizaba una única URL con diferentes menús mostrados mediante pestañas, lo que requería una reactividad precisa al mismo tiempo que se consideraba la escalabilidad, mantenibilidad y legibilidad del código."
+                ]
+            },
+            {
+                "projectTitle": "Sistema para la gestión de Inventarios",
+                "descriptions": [
+                    "Aplicación creada desde cero para la gestión de inventarios en una empresa. Esta aplicación nativa no requiere conexión externa a una base de datos ni a una API, lo que permite mayor agilidad y rapidez en la inserción y lectura de datos. Además, facilita el registro y administración de ventas y proveedores de manera eficiente y bien estructurada."
+                ]
+            },
+            {
+                "projectTitle": "Aplicación movil para revision de facturas",
+                "descriptions": [
+                    "Desarrollé una aplicación móvil multiplataforma utilizando React Native, la cual se conecta a una API para permitir a los usuarios consultar información sobre sus facturas timbradas.",
+                    "Ingresando su ID de cliente y contraseña, pueden acceder a detalles como fechas y montos de facturación. Se implementó autenticación mediante JWT para garantizar una conexión segura con la API, protegiendo la integridad y confidencialidad de los datos del usuario."
+                ]
+            }
+        ]
+    },
+    "ABOUT_ME": {
+        "bento1Title": "Sobre mi",
+        "bento1Description": "Más de 4 años de experiencia como desarrollador web, creando soluciones a traves del software 🤓. Me desenvuelvo mejor en entornos colaborativos, donde el trabajo en equipo, el liderazgo y la comunicación son clave para obtener grandes resultados.",
+        "bento1Description2": "Valoro el feedback, tanto al darlo como al recibirlo, y disfruto compartir conocimientos mientras aprendo de quienes me rodean. Asumo la responsabilidad de tomar decisiones que impulsen los proyectos, siempre buscando el equilibrio entre eficiencia, calidad y el crecimiento del equipo.",
+        "bento1Accent": "Experiencia"
+    }
+}
