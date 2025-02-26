@@ -9,7 +9,9 @@ const { ABOUT_ME } = i18n;
 ---
 
 <SectionContainer title="About me">
-    <div class="grid grid-cols-3 grid-rows-3 gap-10 p-5 border">
+    <div
+        class="grid grid-cols-1 md:grid-cols-3 grid-rows-9 md:grid-rows-3 gap-10 p-5"
+    >
         <BentoCard classes="col-span-2 row-span-3" title={ABOUT_ME.bento1Title}>
             <p class="text-xl p-4">{ABOUT_ME.bento1Description}</p>
             <p class="text-xl p-4">{ABOUT_ME.bento1Description2}</p>

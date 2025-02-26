@@ -7,32 +7,32 @@ export const linksAndBadges: TechBadgeInfo[] = [
     badges: [
       {
         label: 'Vue',
-        image: 'src/assets/techImages/vue.webp',
+        image: 'assets/techImages/vue.webp',
         color: '#42b883'
       },
       {
         label: 'Tailwind',
-        image: 'src/assets/techImages/tailwind.webp',
+        image: 'assets/techImages/tailwind.webp',
         color: '#38bdf8'
       },
       {
         label: 'Nest JS',
-        image: 'src/assets/techImages/nest.webp',
+        image: 'assets/techImages/nest.webp',
         color: '#e0234e'
       },
       {
         label: 'Node JS',
-        image: 'src/assets/techImages/node.webp',
+        image: 'assets/techImages/node.webp',
         color: '#339933'
       },
       {
         label: 'Mysql',
-        image: 'src/assets/techImages/mysql.webp',
+        image: 'assets/techImages/mysql.webp',
         color: '#00758f'
       },
       {
         label: 'TypeScript',
-        image: 'src/assets/techImages/typescript.webp',
+        image: 'assets/techImages/typescript.webp',
         color: '#3178c6'
       }
     ]
@@ -43,27 +43,27 @@ export const linksAndBadges: TechBadgeInfo[] = [
     badges: [
       {
         label: 'React',
-        image: 'src/assets/techImages/react.webp',
+        image: 'assets/techImages/react.webp',
         color: '#61dafb'
       },
       {
         label: 'Tailwind',
-        image: 'src/assets/techImages/tailwind.webp',
+        image: 'assets/techImages/tailwind.webp',
         color: '#38bdf8'
       },
       {
         label: 'Electron',
-        image: 'src/assets/techImages/electronjs.webp',
+        image: 'assets/techImages/electronjs.webp',
         color: '#47848f'
       },
       {
         label: 'Node JS',
-        image: 'src/assets/techImages/node.webp',
+        image: 'assets/techImages/node.webp',
         color: '#339933'
       },
       {
         label: 'Postgre',
-        image: 'src/assets/techImages/postgre.webp',
+        image: 'assets/techImages/postgre.webp',
         color: '#336791'
       }
     ]
@@ -73,17 +73,17 @@ export const linksAndBadges: TechBadgeInfo[] = [
     badges: [
       {
         label: 'React Native',
-        image: 'src/assets/techImages/react.webp',
+        image: 'assets/techImages/react.webp',
         color: '#61dafb'
       },
       {
         label: 'Tailwind',
-        image: 'src/assets/techImages/tailwind.webp',
+        image: 'assets/techImages/tailwind.webp',
         color: '#38bdf8'
       },
       {
         label: 'TypeScript',
-        image: 'src/assets/techImages/typescript.webp',
+        image: 'assets/techImages/typescript.webp',
         color: '#3178c6'
       }
     ]

@@ -10,26 +10,42 @@ const { title, company, location, date, descriptions } = Astro.props;
 ---
 
 <div class="size-3 bg-white rounded-full absolute -left-12 top-3"></div>
-<article class="grid grid-cols-2 w-full gap-y-10 relative">
-    <div>
-        <h3 class="text-lg font-bold text-accent">{title}</h3>
-        <p class="text-sm text-gray-400">{company}</p>
-    </div>
-    <div class="justify-self-end">
-        <p class="text-lg">{location}</p>
-        <p class="text-sm text-gray-400">{date}</p>
+<article class="flex flex-col md:grid md:grid-cols-2 w-full gap-y-10 relative">
+    <div class="flex flex-col gap-3">
+        <div>
+            <h3 class="text-lg font-bold text-accent">{title}</h3>
+            <p class="text-sm text-gray-400">{company}</p>
+        </div>
+        <div class="justify-self-end">
+            <p class="text-lg">{location}</p>
+            <p class="text-sm text-gray-400">{date}</p>
+        </div>
     </div>
     {
         descriptions.map((description) => {
-            return <p class="col-span-2 max-w-[45rem]">{description}</p>;
+            return (
+                <p class="col-span-2 max-w-[45rem] px-2 md:px-0">
+                    {description}
+                </p>
+            );
         })
     }
 </article>
 
 <style>
+    :root {
+        --animation-range: entry 10% cover 30%;
+    }
+
+    @media (min-width: 768px) {
+        :root {
+            --animation-range: entry 50% cover 50%;
+        }
+    }
+
     article {
         animation: show 0.4s ease-out both;
-        animation-range: entry 50% cover 50%;
+        animation-range: var(--animation-range);
         animation-timeline: view();
     }
 
