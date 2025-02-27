@@ -14,7 +14,7 @@ const experiencieLenguage = EXP.EXPERIENCE;
     <div class="flex w-full md:w-3/4 px-3 md:m-auto gap-10 relative">
         <div class="w-1 rounded-full bg-stone-900 flex justify-center relative">
         </div>
-        <!-- <div class="w-1 rounded-full absolute bg-accent" id="timeline"></div> -->
+        <div class="w-1 rounded-full absolute bg-accent" id="timeline"></div>
         <div class="flex flex-col gap-24 w-full">
             {
                 experiencieLenguage.map((exp) => (
@@ -33,9 +33,17 @@ const experiencieLenguage = EXP.EXPERIENCE;
     </div>
 </SectionContainer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const timeline = document.getElementById("timeline");
-        if (!timeline) return;
-    });
-</script>
+<style>
+    #timeline {
+        animation: view auto linear both;
+        animation-timeline: view(block 20% 60%);
+    }
+    @keyframes view {
+        from {
+            height: 0;
+        }
+        to {
+            height: 100%;
+        }
+    }
+</style>

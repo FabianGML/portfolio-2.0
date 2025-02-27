@@ -1,8 +1,8 @@
 ---
 import BentoCard from "@/components/cards/BentoCard.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
-import { getI18N } from "@/i18n";
-import Strong from "../Strong.astro";
+import Strong from "@/components/Strong.astro";
+import Image from "astro/components/Image.astro";
 
 const { currentLocale } = Astro;
 ---
@@ -15,10 +15,10 @@ const { currentLocale } = Astro;
             currentLocale === "es" && (
                 <Fragment>
                     <BentoCard
-                        classes="col-span-2 md:col-span-1 row-span-3"
+                        classes="col-span-2 md:col-span-1 row-span-2"
                         title="Sobre mi"
                     >
-                        <p class="text-xl p-4">
+                        <p class="text-lg p-4">
                             Más de 4 años de experiencia como
                             <Strong> desarrollador web </Strong>, creando
                             soluciones a traves del software 🤓. Me desenvuelvo
@@ -28,7 +28,7 @@ const { currentLocale } = Astro;
                             <Strong>comunicación</Strong>
                             son clave para obtener grandes resultados.
                         </p>
-                        <p class="text-xl p-4">
+                        <p class="text-lg p-4">
                             Valoro el feedback, y disfruto compartir
                             conocimientos mientras aprendo de quienes me rodean.
                             Asumo la <Strong>responsabilidad</Strong>
@@ -37,8 +37,81 @@ const { currentLocale } = Astro;
                             calidad y el crecimiento del equipo.
                         </p>
                     </BentoCard>
+                    <BentoCard
+                        classes="md:col-span-2 md:row-span-2 relative"
+                        title="Hobbies y pasatiempos"
+                    >
+                        <p class="text-lg p-4">
+                            Fuera del código, disfruto pasar mi tiempo libre
+                            manejando <Strong>moto</Strong> y explorando todo lo
+                            relacionado con este mundo, desde la mecánica hasta
+                            las rutas y la sensación de libertad en la
+                            carretera. También me apasiona el
+                            <Strong>baloncesto</Strong>, ya sea jugando un
+                            partido o siguiendo la NBA. Además, los
+                            <Strong>videojuegos</Strong> han sido parte de mi
+                            vida desde que tengo memoria, no solo como
+                            entretenimiento, sino también como una forma de
+                            conectar con otras personas y explorar nuevas
+                            historias y mundos virtuales.
+                        </p>
+                        <div class="flex justify-between relative overflow-hidden">
+                            <img
+                                src="carretera.jpg"
+                                alt="Control"
+                                class="w-full h-60 opacity-55"
+                            />
+                            <img
+                                src="moto.png"
+                                alt="Moto"
+                                class="size-20 object-contain absolute right-1 bottom-10 moto opacity-75"
+                            />
+                        </div>
+                    </BentoCard>
+                    <BentoCard
+                        classes="md:col-span-2 md:row-span-2"
+                        title="Ubicación"
+                    >
+                        <p class="text-2xl pl-10 pt-10">Actualmente vivo en:</p>
+                        <strong class="text-3xl pl-10">
+                            Tijuana, Baja California
+                        </strong>
+                    </BentoCard>
+                    <BentoCard
+                        classes="md:col-span-1 md:row-span-2"
+                        title="Datos extra"
+                    >
+                        <span class="text-3xl inline-block pl-10">
+                            Idiomas:
+                        </span>
+                        <span class="text-2xl block pt-2 pl-14">
+                            Español 🇲🇽
+                        </span>
+                        <span class="text-2xl block pt-2 pl-14">Inglés 🇺🇸</span>
+                    </BentoCard>
                 </Fragment>
             )
         }
     </div>
 </SectionContainer>
+
+<style>
+    .moto {
+        animation: move 5s ease-in infinite; /* 2s animación + 5s pausa */
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(120%);
+        }
+        28.5% {
+            /* (2s / 7s) * 100 = 28.5% */
+            transform: translateX(-1000%);
+        }
+        100% {
+            transform: translateX(
+                -1000%
+            ); /* Mantenerse quieto los 5s restantes */
+        }
+    }
+</style>
