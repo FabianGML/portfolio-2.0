@@ -14,7 +14,7 @@ const { currentLocale } = Astro;
             currentLocale === "es" && (
                 <Fragment>
                     <BentoCard
-                        classes="col-span-1 row-span-1 md:col-span-1 md:row-span-4"
+                        classes="col-span-1 row-span-1 md:col-span-1 md:row-span-2"
                         title="Sobre mi"
                     >
                         <p class="md:text-lg p-4">
@@ -68,21 +68,21 @@ const { currentLocale } = Astro;
                         </div>
                     </BentoCard>
                     <BentoCard
-                        classes="md:col-span-1 md:row-span-2"
+                        classes="md:col-span-2 md:row-span-2"
                         title="Ubicación"
                     >
                         <div class="flex flex-col justify-center">
                             <p class="text-2xl pl-10">Actualmente vivo en:</p>
                             <strong class="pl-10 text-xl md:text-2xl">
-                                Tijuana, Baja California
+                                Tijuana, Baja California, México
                             </strong>
                             <span
-                                class="mt-10 md:text-center"
+                                class="mt-10 md:text-center md:text-2xl md:mt-16"
                                 id="distancia_container"
                             >
                                 ¡Estás a aproximadamente
                                 <strong
-                                    class="text-lg text-accent"
+                                    class="text-lg text-accent md:text-3xl"
                                     id="distancia"
                                 />
                                 <strong class="text-lg text-accent">km</strong>{" "}

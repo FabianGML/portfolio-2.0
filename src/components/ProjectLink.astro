@@ -37,14 +37,13 @@ const icon = type === "external" ? "external-link" : "github";
         left: 50%;
         z-index: 10;
         transform: translateX(-50%);
-        background-color: #272629;
+        background-color: #374151;
         color: white;
         padding: 6px 10px;
         border-radius: 5px;
         font-size: 12px;
         white-space: nowrap;
         opacity: 0;
-        visibility: hidden;
         transition:
             opacity 0.2s ease-in-out,
             transform 0.2s ease-in-out;
@@ -58,13 +57,12 @@ const icon = type === "external" ? "external-link" : "github";
         top: 50%;
         left: 45%;
         transform: translateX(-50%);
-        border: 13px solid #272629;
+        border: 13px solid #374151;
         rotate: 45deg;
     }
 
     .group:hover .tooltip {
         opacity: 1;
-        visibility: visible;
         transform: translateX(-50%) translateY(-10px);
     }
 </style>

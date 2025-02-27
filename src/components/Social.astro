@@ -2,17 +2,61 @@
 interface Props {
     href: string;
     icon: string;
-    tooltip: string;
+    tooltipMessage: string;
 }
-const { href, icon, tooltip } = Astro.props;
+const { href, icon, tooltipMessage } = Astro.props;
 ---
 
 <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    class="p-3 rounded-lg hover:bg-slate-800 inline-block z-10"
-    data-tooltip={tooltip}
+    class="p-3 rounded-lg hover:bg-gray-700 inline-block z-10"
 >
     <img src={icon} alt={icon} />
+    <span class="tooltip z-10">{tooltipMessage}</span>
 </a>
+
+<style>
+    a {
+        position: relative;
+        display: inline-block;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        z-index: 10;
+        transform: translateX(-50%);
+        background-color: #374151;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        transition:
+            opacity 0.2s ease-in-out,
+            transform 0.2s ease-in-out;
+        transform: translateX(-50%) translateY(5rem);
+    }
+
+    .tooltip::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 45%;
+        transform: translateX(-50%);
+        border: 13px solid #374151;
+        rotate: 45deg;
+    }
+
+    a:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(6rem);
+    }
+</style>
