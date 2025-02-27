@@ -188,7 +188,7 @@ const { currentLocale } = Astro;
                 if (distanciaContainer)
                     distanciaContainer.innerHTML = distanciaTotal.toString();
             },
-            (error: GeolocationPositionError) => {
+            (_: GeolocationPositionError) => {
                 const distanciaContainer = document.getElementById(
                     "distancia_container",
                 );

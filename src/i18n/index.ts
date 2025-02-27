@@ -25,12 +25,6 @@ interface Translations {
     githubTooltip: string
     projects: Project[]
   }
-  ABOUT_ME: {
-    bento1Title: string
-    bento1Description: string
-    bento1Description2: string
-    bento1Accent: string
-  }
 }
 
 export function getI18N ({ currentLocale = 'es' }: { currentLocale?: string | undefined }): Translations {
