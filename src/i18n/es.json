@@ -58,11 +58,5 @@
                 ]
             }
         ]
-    },
-    "ABOUT_ME": {
-        "bento1Title": "Sobre mi",
-        "bento1Description": "Más de 4 años de experiencia como desarrollador web, creando soluciones a traves del software 🤓. Me desenvuelvo mejor en entornos colaborativos, donde el trabajo en equipo, el liderazgo y la comunicación son clave para obtener grandes resultados.",
-        "bento1Description2": "Valoro el feedback, tanto al darlo como al recibirlo, y disfruto compartir conocimientos mientras aprendo de quienes me rodean. Asumo la responsabilidad de tomar decisiones que impulsen los proyectos, siempre buscando el equilibrio entre eficiencia, calidad y el crecimiento del equipo.",
-        "bento1Accent": "Experiencia"
     }
 }

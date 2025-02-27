@@ -2,23 +2,43 @@
 import BentoCard from "@/components/cards/BentoCard.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import { getI18N } from "@/i18n";
+import Strong from "../Strong.astro";
 
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
-const { ABOUT_ME } = i18n;
 ---
 
 <SectionContainer title="About me">
     <div
         class="grid grid-cols-1 md:grid-cols-3 grid-rows-9 md:grid-rows-3 gap-10 p-5"
     >
-        <BentoCard classes="col-span-2 row-span-3" title={ABOUT_ME.bento1Title}>
-            <p class="text-xl p-4">{ABOUT_ME.bento1Description}</p>
-            <p class="text-xl p-4">{ABOUT_ME.bento1Description2}</p>
-        </BentoCard>
-        <!-- <BentoCard
-            classes="col-span-2 row-span-2"
-            title={ABOUT_ME.bento2Title}
-        /> -->
+        {
+            currentLocale === "es" && (
+                <Fragment>
+                    <BentoCard
+                        classes="col-span-2 md:col-span-1 row-span-3"
+                        title="Sobre mi"
+                    >
+                        <p class="text-xl p-4">
+                            Más de 4 años de experiencia como
+                            <Strong> desarrollador web </Strong>, creando
+                            soluciones a traves del software 🤓. Me desenvuelvo
+                            mejor en entornos colaborativos, donde el
+                            <Strong>trabajo en equipo</Strong>, el
+                            <Strong>liderazgo</Strong> y la
+                            <Strong>comunicación</Strong>
+                            son clave para obtener grandes resultados.
+                        </p>
+                        <p class="text-xl p-4">
+                            Valoro el feedback, y disfruto compartir
+                            conocimientos mientras aprendo de quienes me rodean.
+                            Asumo la <Strong>responsabilidad</Strong>
+                            de tomar decisiones que impulsen los proyectos,
+                            siempre buscando el equilibrio entre eficiencia,
+                            calidad y el crecimiento del equipo.
+                        </p>
+                    </BentoCard>
+                </Fragment>
+            )
+        }
     </div>
 </SectionContainer>
