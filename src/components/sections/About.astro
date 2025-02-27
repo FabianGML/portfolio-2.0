@@ -2,23 +2,22 @@
 import BentoCard from "@/components/cards/BentoCard.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Strong from "@/components/Strong.astro";
-import Image from "astro/components/Image.astro";
 
 const { currentLocale } = Astro;
 ---
 
 <SectionContainer title="About me">
     <div
-        class="grid grid-cols-1 md:grid-cols-3 grid-rows-9 md:grid-rows-3 gap-10 p-5"
+        class="grid grid-cols-1 grid-rows-1 gap-3 md:grid-cols-3 md:grid-rows-3 md:gap-10 p-5"
     >
         {
             currentLocale === "es" && (
                 <Fragment>
                     <BentoCard
-                        classes="col-span-2 md:col-span-1 row-span-2"
+                        classes="col-span-1 row-span-1 md:col-span-1 md:row-span-4"
                         title="Sobre mi"
                     >
-                        <p class="text-lg p-4">
+                        <p class="md:text-lg p-4">
                             Más de 4 años de experiencia como
                             <Strong> desarrollador web </Strong>, creando
                             soluciones a traves del software 🤓. Me desenvuelvo
@@ -28,7 +27,7 @@ const { currentLocale } = Astro;
                             <Strong>comunicación</Strong>
                             son clave para obtener grandes resultados.
                         </p>
-                        <p class="text-lg p-4">
+                        <p class="md:text-lg p-4">
                             Valoro el feedback, y disfruto compartir
                             conocimientos mientras aprendo de quienes me rodean.
                             Asumo la <Strong>responsabilidad</Strong>
@@ -41,7 +40,7 @@ const { currentLocale } = Astro;
                         classes="md:col-span-2 md:row-span-2 relative"
                         title="Hobbies y pasatiempos"
                     >
-                        <p class="text-lg p-4">
+                        <p class="md:text-lg p-4">
                             Fuera del código, disfruto pasar mi tiempo libre
                             manejando <Strong>moto</Strong> y explorando todo lo
                             relacionado con este mundo, desde la mecánica hasta
@@ -69,25 +68,41 @@ const { currentLocale } = Astro;
                         </div>
                     </BentoCard>
                     <BentoCard
-                        classes="md:col-span-2 md:row-span-2"
+                        classes="md:col-span-1 md:row-span-2"
                         title="Ubicación"
                     >
-                        <p class="text-2xl pl-10 pt-10">Actualmente vivo en:</p>
-                        <strong class="text-3xl pl-10">
-                            Tijuana, Baja California
-                        </strong>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-2xl pl-10">Actualmente vivo en:</p>
+                            <strong class="pl-10 text-xl md:text-2xl">
+                                Tijuana, Baja California
+                            </strong>
+                            <span
+                                class="mt-10 md:text-center"
+                                id="distancia_container"
+                            >
+                                ¡Estás a aproximadamente
+                                <strong
+                                    class="text-lg text-accent"
+                                    id="distancia"
+                                />
+                                <strong class="text-lg text-accent">km</strong>{" "}
+                                de aquí!
+                            </span>
+                        </div>
                     </BentoCard>
                     <BentoCard
                         classes="md:col-span-1 md:row-span-2"
                         title="Datos extra"
                     >
-                        <span class="text-3xl inline-block pl-10">
+                        <span class="text-2xl md:text-3xl inline-block pl-10">
                             Idiomas:
                         </span>
-                        <span class="text-2xl block pt-2 pl-14">
+                        <span class="text-xl md:text-2xl block pt-2 pl-14">
                             Español 🇲🇽
                         </span>
-                        <span class="text-2xl block pt-2 pl-14">Inglés 🇺🇸</span>
+                        <span class="text-xl md:text-2xl block pt-2 pl-14">
+                            Inglés 🇺🇸
+                        </span>
                     </BentoCard>
                 </Fragment>
             )
@@ -115,3 +130,74 @@ const { currentLocale } = Astro;
         }
     }
 </style>
+
+<script>
+    function haversine(
+        lat1: number,
+        lon1: number,
+        lat2: number,
+        lon2: number,
+    ): number {
+        const R = 6371; // Radio de la Tierra en km
+        const toRad = (value: number) => value * (Math.PI / 180);
+
+        const dLat = toRad(lat2 - lat1);
+        const dLon = toRad(lon2 - lon1);
+
+        const a =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(toRad(lat1)) *
+                Math.cos(toRad(lat2)) *
+                Math.sin(dLon / 2) *
+                Math.sin(dLon / 2);
+
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c; // Distancia en km
+    }
+
+    // Coordenadas de Tijuana
+    const tijuanaCoords = { lat: 32.5149, lon: -117.0382 };
+
+    // Función para obtener la ubicación del usuario y calcular la distancia
+    function getUserDistanceFromTijuana(): void {
+        let distanciaTotal;
+        if (!navigator.geolocation) {
+            console.error(
+                "La geolocalización no está soportada en este navegador.",
+            );
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            (position: GeolocationPosition) => {
+                const userCoords = {
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude,
+                };
+
+                const distance = haversine(
+                    userCoords.lat,
+                    userCoords.lon,
+                    tijuanaCoords.lat,
+                    tijuanaCoords.lon,
+                );
+
+                distanciaTotal = Math.round(distance);
+
+                const distanciaContainer = document.getElementById("distancia");
+                if (distanciaContainer)
+                    distanciaContainer.innerHTML = distanciaTotal.toString();
+            },
+            (error: GeolocationPositionError) => {
+                const distanciaContainer = document.getElementById(
+                    "distancia_container",
+                );
+                if (distanciaContainer)
+                    distanciaContainer.innerHTML =
+                        "¡Permite la geolocalizacion para ver la distancia entre nosotros!";
+            },
+        );
+    }
+
+    getUserDistanceFromTijuana();
+</script>

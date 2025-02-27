@@ -13,17 +13,19 @@ const { title, projects } = i18n.PROJECTS_SECTION;
 ---
 
 <SectionContainer title={title}>
-    {
-        projects.map((project, index) => {
-            return (
-                <ProjectCard
-                    project={project}
-                    badges={linksAndBadges[index].badges}
-                    link={linksAndBadges[index].link ?? ""}
-                    githubLink={linksAndBadges[index].github ?? ""}
-                    altImage={linksAndBadges[index].altImage}
-                />
-            );
-        })
-    }
+    <div class="flex gap-5 flex-col md:gap-24">
+        {
+            projects.map((project, index) => {
+                return (
+                    <ProjectCard
+                        project={project}
+                        badges={linksAndBadges[index].badges}
+                        link={linksAndBadges[index].link ?? ""}
+                        githubLink={linksAndBadges[index].github ?? ""}
+                        altImage={linksAndBadges[index].altImage}
+                    />
+                );
+            })
+        }
+    </div>
 </SectionContainer>

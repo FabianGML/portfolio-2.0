@@ -7,6 +7,6 @@ const { classes, title } = Astro.props;
 ---
 
 <article class={`${classes} border-2 border-gray-700 rounded-lg p-5`}>
-    <h5 class="text-accent text-3xl font-bold p-4">{title}</h5>
+    <h5 class="text-accent text-2xl font-bold p-4 md:text-3xl">{title}</h5>
     <slot />
 </article>
