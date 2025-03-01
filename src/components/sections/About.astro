@@ -6,7 +6,7 @@ import Strong from "@/components/Strong.astro";
 const { currentLocale } = Astro;
 ---
 
-<SectionContainer title="About me">
+<SectionContainer title="About me" id="about">
     <div
         class="grid grid-cols-1 grid-rows-1 gap-3 md:grid-cols-3 md:grid-rows-3 md:gap-10 p-5"
     >
@@ -162,9 +162,6 @@ const { currentLocale } = Astro;
     function getUserDistanceFromTijuana(): void {
         let distanciaTotal;
         if (!navigator.geolocation) {
-            console.error(
-                "La geolocalización no está soportada en este navegador.",
-            );
             return;
         }
 
