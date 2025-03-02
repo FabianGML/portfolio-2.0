@@ -10,12 +10,13 @@ import { getI18N } from "@/i18n";
 interface Props {
     project: Project;
     badges: TechBadgeInterface[];
+    imageSrc: string;
     link?: string;
     altImage?: string;
     githubLink?: string;
 }
 
-const { project, badges, link, altImage, githubLink } = Astro.props;
+const { project, badges, imageSrc, link, altImage, githubLink } = Astro.props;
 
 const { currentLocale } = Astro;
 const { PROJECTS_SECTION } = getI18N({ currentLocale });
@@ -24,7 +25,7 @@ const { PROJECTS_SECTION } = getI18N({ currentLocale });
 <article
     class="flex flex-col md:flex-row w-full rounded-t-lg border justify-center items-center min-h-[50vh]"
 >
-    <div class="w-full md:w-3/4 p-5">
+    <div class="w-full md:w-1/2 p-5">
         <div
             class="border-b border-stone-700 p-2 justify-start items-center flex gap-3 md:gap-5"
         >
@@ -41,7 +42,7 @@ const { PROJECTS_SECTION } = getI18N({ currentLocale });
                             link={link}
                             tooltipMessage={PROJECTS_SECTION.websiteTooltip}
                             type="external"
-                            altImage={altImage}
+                            altImage="anchor Image"
                         />
                     )
                 }
@@ -51,7 +52,7 @@ const { PROJECTS_SECTION } = getI18N({ currentLocale });
                             link={githubLink}
                             tooltipMessage={PROJECTS_SECTION.githubTooltip}
                             type="github"
-                            altImage={altImage}
+                            altImage="github Image"
                         />
                     )
                 }
@@ -80,8 +81,11 @@ const { PROJECTS_SECTION } = getI18N({ currentLocale });
             }
         </div>
     </div>
-    <img
-        src="https://picsum.photos/500/300"
-        class="p-6 w-full md:w-2/5 h-80 object-contain"
-    />
+    <div class="p-4 w-full md:w-1/2">
+        <img
+            src={imageSrc}
+            alt={altImage}
+            class="w-full max-h-96 object-contain rounded-lg"
+        />
+    </div>
 </article>

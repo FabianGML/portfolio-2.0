@@ -76,18 +76,6 @@ const { currentLocale } = Astro;
                             <strong class="pl-10 text-xl md:text-2xl">
                                 Tijuana, Baja California, México
                             </strong>
-                            <span
-                                class="mt-10 md:text-center md:text-2xl md:mt-16"
-                                id="distancia_container"
-                            >
-                                ¡Estás a aproximadamente
-                                <strong
-                                    class="text-lg text-accent md:text-3xl"
-                                    id="distancia"
-                                />
-                                <strong class="text-lg text-accent">km</strong>{" "}
-                                de aquí!
-                            </span>
                         </div>
                     </BentoCard>
                     <BentoCard
@@ -112,7 +100,7 @@ const { currentLocale } = Astro;
 
 <style>
     .moto {
-        animation: move 5s ease-in infinite; /* 2s animación + 5s pausa */
+        animation: move 5s ease-in infinite;
     }
 
     @keyframes move {
@@ -120,81 +108,10 @@ const { currentLocale } = Astro;
             transform: translateX(120%);
         }
         28.5% {
-            /* (2s / 7s) * 100 = 28.5% */
             transform: translateX(-1000%);
         }
         100% {
-            transform: translateX(
-                -1000%
-            ); /* Mantenerse quieto los 5s restantes */
+            transform: translateX(-1000%);
         }
     }
 </style>
-
-<script>
-    function haversine(
-        lat1: number,
-        lon1: number,
-        lat2: number,
-        lon2: number,
-    ): number {
-        const R = 6371; // Radio de la Tierra en km
-        const toRad = (value: number) => value * (Math.PI / 180);
-
-        const dLat = toRad(lat2 - lat1);
-        const dLon = toRad(lon2 - lon1);
-
-        const a =
-            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(toRad(lat1)) *
-                Math.cos(toRad(lat2)) *
-                Math.sin(dLon / 2) *
-                Math.sin(dLon / 2);
-
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        return R * c; // Distancia en km
-    }
-
-    // Coordenadas de Tijuana
-    const tijuanaCoords = { lat: 32.5149, lon: -117.0382 };
-
-    // Función para obtener la ubicación del usuario y calcular la distancia
-    function getUserDistanceFromTijuana(): void {
-        let distanciaTotal;
-        if (!navigator.geolocation) {
-            return;
-        }
-
-        navigator.geolocation.getCurrentPosition(
-            (position: GeolocationPosition) => {
-                const userCoords = {
-                    lat: position.coords.latitude,
-                    lon: position.coords.longitude,
-                };
-
-                const distance = haversine(
-                    userCoords.lat,
-                    userCoords.lon,
-                    tijuanaCoords.lat,
-                    tijuanaCoords.lon,
-                );
-
-                distanciaTotal = Math.round(distance);
-
-                const distanciaContainer = document.getElementById("distancia");
-                if (distanciaContainer)
-                    distanciaContainer.innerHTML = distanciaTotal.toString();
-            },
-            (_: GeolocationPositionError) => {
-                const distanciaContainer = document.getElementById(
-                    "distancia_container",
-                );
-                if (distanciaContainer)
-                    distanciaContainer.innerHTML =
-                        "¡Permite la geolocalizacion para ver la distancia entre nosotros!";
-            },
-        );
-    }
-
-    getUserDistanceFromTijuana();
-</script>

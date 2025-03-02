@@ -1,4 +1,5 @@
 export interface TechBadgeInfo {
+  imageSrc: string
   link?: string
   github?: string
   altImage?: string

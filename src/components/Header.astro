@@ -18,15 +18,30 @@ import ListItem from "@/components/header/ListItem.astro";
 <style>
     header {
         z-index: 50;
-        animation: blur auto linear both;
+        /* Animación de desplazamiento hacia arriba */
+        animation: scroll-animation auto linear both;
         animation-timeline: scroll(root block);
-        animation-range: 0 400px;
+        animation-range: 0 100px;
+
+        /* Segunda animación de desenfoque */
+        animation-name: blur;
+        animation-timeline: scroll(root block);
+        animation-range: 0px 400px;
     }
 
     @keyframes blur {
         to {
             backdrop-filter: blur(1px);
             background: rgba(9, 21, 38, 0.8);
+        }
+    }
+
+    @keyframes scroll-animation {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-100%);
         }
     }
 </style>

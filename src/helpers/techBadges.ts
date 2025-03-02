@@ -2,6 +2,7 @@ import type { TechBadgeInfo } from '@/types/experience/experienceTypes'
 
 export const linksAndBadges: TechBadgeInfo[] = [
   {
+    imageSrc: '/projects/N1-project.webp',
     link: 'http://app.n1capital.com/login',
     altImage: 'N1 Contable app',
     badges: [
@@ -38,6 +39,7 @@ export const linksAndBadges: TechBadgeInfo[] = [
     ]
   },
   {
+    imageSrc: '/projects/store_management_desk.webp',
     github: 'https://github.com/FabianGML/store_management_desk',
     altImage: 'Gestor de inventarios app',
     badges: [
@@ -69,6 +71,7 @@ export const linksAndBadges: TechBadgeInfo[] = [
     ]
   },
   {
+    imageSrc: '/projects/mobile-app.webp',
     altImage: 'Aplicación movil para revision de facturas',
     badges: [
       {

@@ -37,9 +37,11 @@ const { href, icon, tooltipMessage } = Astro.props;
         font-size: 12px;
         white-space: nowrap;
         opacity: 0;
+        visibility: hidden;
         transition:
             opacity 0.2s ease-in-out,
-            transform 0.2s ease-in-out;
+            transform 0.2s ease-in-out,
+            visibility 0.2s ease-in-out;
         transform: translateX(-50%) translateY(5rem);
     }
 
