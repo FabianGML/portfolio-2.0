@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+    /* Fonts */
+    --primary-font: "Rubik Variable", sans-serif;
+    --secondary-font: "Outfit Variable", sans-serif;
+    /* Colors */
+    --color-primary: #102847;
+    --color-accent: #00f2ff;
+    --color-hover: #374151;
+}
+
+html {
+    font-family: var(--primary-font);
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(180deg,
+            var(--color-primary) 0%,
+            #040a11 50%);
+    overscroll-behavior: none;
+    color: #fff;
+}
+
+strong {
+    color: var(--color-accent);
+}

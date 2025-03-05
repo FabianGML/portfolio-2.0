@@ -32,33 +32,3 @@ const lang = getLangFromUrl(Astro.url);
 		</main>
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		/* Fonts */
-		--primary-font: "Rubik Variable", sans-serif;
-		--secondary-font: "Outfit Variable", sans-serif;
-		/* Colors */
-		--primary-color: #102847;
-		--accent-color: #00f2ff;
-	}
-
-	html {
-		font-family: var(--primary-font);
-		overflow-x: hidden;
-	}
-
-	body {
-		background: linear-gradient(
-			180deg,
-			var(--primary-color) 0%,
-			#040a11 50%
-		);
-		overscroll-behavior: none;
-		color: #fff;
-	}
-
-	strong {
-		color: var(--accent-color);
-	}
-</style>
