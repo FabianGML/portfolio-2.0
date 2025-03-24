@@ -1,4 +1,6 @@
 ---
+import Tooltip from "./Tooltip.astro";
+
 interface Props {
     link: string;
     tooltipMessage: string;
@@ -11,61 +13,19 @@ const { link, tooltipMessage, altImage, type } = Astro.props;
 const icon = type === "external" ? "external-link" : "github";
 ---
 
-<a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="hover:bg-gray-700 block p-2 rounded-lg relative group"
->
-    <img src=`assets/icons/${icon}.svg` alt={altImage} />
-    <span class="tooltip z-10">{tooltipMessage}</span>
-</a>
+<Tooltip message={tooltipMessage}>
+    <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:bg-gray-700 block p-2 rounded-lg relative group"
+    >
+        <img src=`assets/icons/${icon}.svg` alt={altImage} />
+    </a>
+</Tooltip>
 
 <style>
     a {
         transition: background-color 0.3s ease-in-out;
-    }
-
-    .group {
-        position: relative;
-        display: inline-block;
-    }
-
-    .tooltip {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        z-index: 10;
-        transform: translateX(-50%);
-        background-color: #374151;
-        color: white;
-        padding: 6px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        white-space: nowrap;
-        visibility: hidden;
-        opacity: 0;
-        transition:
-            opacity 0.2s ease-in-out,
-            transform 0.2s ease-in-out,
-            visibility 0.2s ease-in-out;
-        transform: translateX(-50%) translateY(-5px);
-    }
-
-    .tooltip::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 50%;
-        left: 45%;
-        transform: translateX(-50%);
-        border: 13px solid #374151;
-        rotate: 45deg;
-    }
-
-    .group:hover .tooltip {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(-10px);
     }
 </style>

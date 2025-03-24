@@ -1,0 +1,58 @@
+---
+interface Props {
+    message: string;
+    position?: "top" | "bottom";
+}
+
+const { message, position = "top" } = Astro.props;
+---
+
+<div class="relative group flex">
+    <slot />
+
+    <span
+        class={`tooltip ${position === "top" ? "bottom-full mb-3" : "top-full mt-3"}`}
+    >
+        {message}
+        <span
+            class={`tooltip-arrow ${position === "top" ? "top-[65%]" : "bottom-[65%]"}`}
+        ></span>
+    </span>
+</div>
+
+<style>
+    .tooltip {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        background-color: #374151;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.2s ease-in-out,
+            transform 0.2s ease-in-out,
+            visibility 0.2s ease-in-out;
+        transform: translateX(-50%) translateY(-1.5rem);
+    }
+
+    .tooltip-arrow {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 17px;
+        height: 17px;
+        background-color: #374151;
+    }
+
+    .group:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+</style>
