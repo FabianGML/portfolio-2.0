@@ -15,6 +15,10 @@ interface Translations {
     DESCRIPTION_STRONG: string
     DESCRIPTION_SECOND: string
   }
+  LENGUAGES: Array<{
+    title: string
+    lang: string
+  }>
   EXP: {
     title: string
     EXPERIENCE: Experience[]

@@ -1,6 +1,7 @@
 ---
 import ListItem from "@/components/header/ListItem.astro";
 import Tooltip from "@/components/Tooltip.astro";
+import Lenguages from "./Lenguages.astro";
 ---
 
 <header class="w-screen h-20 fixed top-0">
@@ -12,9 +13,7 @@ import Tooltip from "@/components/Tooltip.astro";
             <ListItem href="/#projects">Projects</ListItem>
             <ListItem href="/#about">About</ListItem>
         </ul>
-        <button class="cursor-pointer hover:bg-gray-700 p-2 rounded-lg">
-            <img src="/assets/icons/lenguage.svg" alt="Language Icon" />
-        </button>
+        <Lenguages />
     </nav>
     <!-- Idioma -->
 </header>

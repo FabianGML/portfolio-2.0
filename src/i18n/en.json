@@ -1,6 +1,16 @@
 {
     "TITLE": "Fabián Gutiérrez - Web Developer with more than 4 years of experience",
     "DESCRIPTION": "Web Developer with over 4 years of experience creating solutions through software 🤓.",
+    "LENGUAGES": [
+        {
+            "title": "🇲🇽 Spanish",
+            "lang": "es"
+        },
+        {
+            "title": "🇺🇸 English",
+            "lang": "en"
+        }
+    ],
     "HERO": {
         "DESCRIPTION_FIRST": "+4 years of experience as a ",
         "DESCRIPTION_STRONG": "software developer",

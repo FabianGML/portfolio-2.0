@@ -1,6 +1,16 @@
 {
     "TITLE": "Fabián Gutiérrez - Desarrollador web con más de 4 años de experiencia",
     "DESCRIPTION": "Desarrollador web con más de 4 años de experiencia creando soluciones a través del software 🤓.",
+    "LENGUAGES": [
+        {
+            "title": "🇲🇽 Español",
+            "lang": "es"
+        },
+        {
+            "title": "🇺🇸 Inglés",
+            "lang": "en"
+        }
+    ],
     "HERO": {
         "DESCRIPTION_FIRST": "+4 años de experiencia como ",
         "DESCRIPTION_STRONG": "desarrollador de software ",
